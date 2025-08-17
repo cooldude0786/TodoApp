@@ -1,9 +1,7 @@
 # Flutter Task Management App
 
 A sleek and functional to-do list application built with Flutter and the BLoC pattern. It allows users to organize tasks into different collections, supports both light and dark modes, and features a rich, intuitive user interface.
-
 ---
-
 ## Features
 
 - **Collection Management**: Organize tasks by creating and deleting custom collections (e.g., "Work," "Personal").
