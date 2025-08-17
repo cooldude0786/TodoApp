@@ -2,12 +2,9 @@
 
 A sleek and functional to-do list application built with Flutter and the BLoC pattern. It allows users to organize tasks into different collections, supports both light and dark modes, and features a rich, intuitive user interface.
 
-![App Screenshot Placeholder](https://via.placeholder.com/800x450.png?text=Add+a+Screenshot+or+GIF+of+Your+App+Here)
-*Replace the placeholder image above with a screenshot or GIF of your application.*
-
 ---
 
-## ## Features
+## Features
 
 - **Collection Management**: Organize tasks by creating and deleting custom collections (e.g., "Work," "Personal").
 - **Task Management**:
@@ -23,7 +20,7 @@ A sleek and functional to-do list application built with Flutter and the BLoC pa
 
 ---
 
-## ## Tools & Technologies
+## Tools & Technologies
 
 - **Framework**: Flutter (Dart)
 - **State Management**: `flutter_bloc`
@@ -32,7 +29,7 @@ A sleek and functional to-do list application built with Flutter and the BLoC pa
 
 ---
 
-## ## File Structure
+## File Structure
 
 The project is organized into logical directories to maintain a clean and scalable codebase.
 
@@ -50,7 +47,7 @@ lib/
 
 ---
 
-## ## Setup and Installation
+## Setup and Installation
 
 1.  **Clone the repository**:
     ```sh
