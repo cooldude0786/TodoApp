@@ -10,5 +10,5 @@ abstract class TasksState {
 class TasksInitial extends TasksState {}
 
 class TasksLoaded extends TasksState {
-  const TasksLoaded({required List<Task> tasks}) : super(tasks: tasks);
+  const TasksLoaded({required super.tasks});
 }

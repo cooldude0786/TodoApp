@@ -10,6 +10,5 @@ abstract class CollectionState {
 class CollectionInitial extends CollectionState {}
 
 class CollectionLoaded extends CollectionState {
-  const CollectionLoaded({required List<Collection> collections})
-      : super(collections: collections);
+  const CollectionLoaded({required super.collections});
 }

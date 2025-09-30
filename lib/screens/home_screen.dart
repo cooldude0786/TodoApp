@@ -1,14 +1,12 @@
-// lib/screens/home_screen.dart
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:todo/bloc/collection_bloc/collection_bloc.dart';
-import 'package:todo/bloc/collection_bloc/collection_event.dart';
-import 'package:todo/bloc/collection_bloc/collection_state.dart';
+import '../bloc/collection_bloc/collection_bloc.dart';
+import '../bloc/collection_bloc/collection_event.dart';
+import '../bloc/collection_bloc/collection_state.dart';
 import '../models/collection.dart';
 import '../screens/task_screen.dart';
-import 'package:todo/bloc/task_bloc/tasks_bloc.dart';
-import 'package:todo/bloc/task_bloc/tasks_state.dart';
+import '../bloc/task_bloc/tasks_bloc.dart';
+import '../bloc/task_bloc/tasks_state.dart';
 import 'package:todo/widgets/app_drawer.dart';
 import 'app_theme.dart';
 
@@ -70,10 +68,10 @@ class HomeScreen extends StatelessWidget {
           return GridView.builder(
             padding: const EdgeInsets.all(12),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,  
+              crossAxisCount: 2,
               crossAxisSpacing: 12,
               mainAxisSpacing: 12,
-              mainAxisExtent: 140, 
+              mainAxisExtent: 140,
             ),
             itemCount: collectionState.collections.length,
             itemBuilder: (context, index) {
@@ -129,9 +127,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-

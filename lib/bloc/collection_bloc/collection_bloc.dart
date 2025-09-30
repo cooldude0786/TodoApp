@@ -1,21 +1,27 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'collection_event.dart';
 import 'collection_state.dart';
-import 'package:todo/models/collection.dart';
+import '../../models/collection.dart';
 
 class CollectionBloc extends Bloc<CollectionEvent, CollectionState> {
-  CollectionBloc() : super(CollectionInitial()) {
+  final Box<Collection> _collectionBox;
+
+  CollectionBloc()
+      : _collectionBox = Hive.box<Collection>('collections'),
+        // MODIFIED: Load initial data from the Hive box
+        super(CollectionLoaded(collections: Hive.box<Collection>('collections').values.toList())) {
     on<AddCollection>(_onAddCollection);
     on<DeleteCollection>(_onDeleteCollection);
   }
 
   void _onAddCollection(AddCollection event, Emitter<CollectionState> emit) {
-    final updatedList = List<Collection>.from(state.collections)..add(event.collection);
-    emit(CollectionLoaded(collections: updatedList));
+    _collectionBox.put(event.collection.id, event.collection); // Save to Hive
+    emit(CollectionLoaded(collections: _collectionBox.values.toList())); // Emit new state from Hive
   }
 
   void _onDeleteCollection(DeleteCollection event, Emitter<CollectionState> emit) {
-    final updatedList = state.collections.where((col) => col.id != event.collectionId).toList();
-    emit(CollectionLoaded(collections: updatedList));
+    _collectionBox.delete(event.collectionId); // Delete from Hive
+    emit(CollectionLoaded(collections: _collectionBox.values.toList())); // Emit new state from Hive
   }
 }
